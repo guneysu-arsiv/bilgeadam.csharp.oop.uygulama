@@ -12,6 +12,8 @@ namespace AjandaUygulama
 {
     public partial class GUI : Form
     {
+        public DAL.All dal = new DAL.All();
+
         public GUI()
         {
             InitializeComponent();
@@ -19,8 +21,33 @@ namespace AjandaUygulama
 
         private void GUI_Load(object sender, EventArgs e)
         {
-            new DAL.All().ListeleDurum();
-            new DAL.All().ListeleDurum(new DateTime() );
+            dal.ListeleDurum();
+            dal.ListeleDurum(new DateTime());
+
+            dal.KaydetDurum(
+                new Entity.Durum
+                {
+                    date = DateTime.Now,
+                    durum = Enum.Durum.Musait,
+                    title = "Kırmızı Başlık"
+                }
+                );
+
+            dal.KaydetResim(
+                new Entity.Resim
+                {
+                    date = DateTime.Now,
+                    title = "Resim",
+                    picturePath = "C:/foo.png"
+                }
+                );
+
+            lstAll.DataSource = dal.Listele();
+
+            lstResim.DataSource = DB.Ortak.resimler;
+            lstYazi.DataSource = DB.Ortak.yazilar;
+            lstDurum.DataSource = DB.Ortak.durumlar;
+
         }
         ~GUI()
         {

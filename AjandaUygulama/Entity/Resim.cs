@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AjandaUygulama.Entity
+namespace AjandaUygulama.Enum
 {
     class Resim
     {
-        public string PicturePath { get; set; }
+        public string picturePath { get; set; }
     }
 }

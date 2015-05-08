@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Durum.cs" />
     <Compile Include="Entity\Resim.cs" />
     <Compile Include="Entity\Yazi.cs" />
     <Compile Include="Enum\Durum.cs" />

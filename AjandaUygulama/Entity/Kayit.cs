@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AjandaUygulama.Entity
+namespace AjandaUygulama.Enum
 {
     public abstract class Kayit
     {
-        public string Title { get; set; }
-        public DateTime Tarih { get; set; }
+        public string title { get; set; }
+        public DateTime date { get; set; }
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AjandaUygulama.Entity
+namespace AjandaUygulama.Enum
 {
     public class Yazi:Kayit
     {
-        public string Body { get; set; }
+        public string body { get; set; }
     }
 }

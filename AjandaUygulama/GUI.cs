@@ -45,6 +45,14 @@ namespace AjandaUygulama
         {
             // TODO: Save to file
             // Or to FORM_CLOSING Event
+            try
+            {
+                new Serialize.SerilestiremediklerimizdenMisiniz().bas();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
 
         private void uiRefresh()

@@ -8,7 +8,7 @@ namespace AjandaUygulama.DAL
 {
     public partial class All
     {
-        public IList<Entity.Durum> ListeleDurum(DateTime? tarih = null)
+        public List<Entity.Durum> ListeleDurum(DateTime? tarih = null)
         {
             var liste = new List<Entity.Durum>();
 

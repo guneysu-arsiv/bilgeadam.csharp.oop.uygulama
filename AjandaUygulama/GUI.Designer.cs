@@ -41,6 +41,8 @@
             this.btnYazi = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnFiltrele = new System.Windows.Forms.Button();
+            this.dtpFiltre = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lstAll
@@ -50,7 +52,7 @@
             this.lstAll.ItemHeight = 17;
             this.lstAll.Location = new System.Drawing.Point(10, 45);
             this.lstAll.Name = "lstAll";
-            this.lstAll.Size = new System.Drawing.Size(169, 326);
+            this.lstAll.Size = new System.Drawing.Size(169, 296);
             this.lstAll.TabIndex = 0;
             // 
             // lstDurum
@@ -60,7 +62,7 @@
             this.lstDurum.ItemHeight = 17;
             this.lstDurum.Location = new System.Drawing.Point(179, 45);
             this.lstDurum.Name = "lstDurum";
-            this.lstDurum.Size = new System.Drawing.Size(182, 326);
+            this.lstDurum.Size = new System.Drawing.Size(182, 296);
             this.lstDurum.TabIndex = 1;
             // 
             // lstResim
@@ -70,7 +72,7 @@
             this.lstResim.ItemHeight = 17;
             this.lstResim.Location = new System.Drawing.Point(361, 45);
             this.lstResim.Name = "lstResim";
-            this.lstResim.Size = new System.Drawing.Size(182, 326);
+            this.lstResim.Size = new System.Drawing.Size(182, 296);
             this.lstResim.TabIndex = 2;
             // 
             // lstYazi
@@ -80,7 +82,7 @@
             this.lstYazi.ItemHeight = 17;
             this.lstYazi.Location = new System.Drawing.Point(543, 45);
             this.lstYazi.Name = "lstYazi";
-            this.lstYazi.Size = new System.Drawing.Size(182, 326);
+            this.lstYazi.Size = new System.Drawing.Size(182, 296);
             this.lstYazi.TabIndex = 3;
             // 
             // label1
@@ -127,7 +129,7 @@
             // 
             this.btnDurum.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnDurum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDurum.Location = new System.Drawing.Point(731, 94);
+            this.btnDurum.Location = new System.Drawing.Point(730, 48);
             this.btnDurum.Name = "btnDurum";
             this.btnDurum.Size = new System.Drawing.Size(63, 40);
             this.btnDurum.TabIndex = 9;
@@ -138,7 +140,7 @@
             // 
             this.btnResim.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnResim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResim.Location = new System.Drawing.Point(731, 140);
+            this.btnResim.Location = new System.Drawing.Point(730, 94);
             this.btnResim.Name = "btnResim";
             this.btnResim.Size = new System.Drawing.Size(63, 40);
             this.btnResim.TabIndex = 10;
@@ -149,7 +151,7 @@
             // 
             this.btnYazi.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnYazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYazi.Location = new System.Drawing.Point(731, 186);
+            this.btnYazi.Location = new System.Drawing.Point(730, 140);
             this.btnYazi.Name = "btnYazi";
             this.btnYazi.Size = new System.Drawing.Size(63, 40);
             this.btnYazi.TabIndex = 11;
@@ -160,28 +162,50 @@
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(731, 48);
+            this.btnRefresh.Location = new System.Drawing.Point(730, 186);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(63, 40);
             this.btnRefresh.TabIndex = 12;
-            this.btnRefresh.Text = "Yenile";
+            this.btnRefresh.Text = "Tümü";
             this.btnRefresh.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(732, 275);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(731, 275);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 95);
+            this.label5.Size = new System.Drawing.Size(162, 99);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Silmek İstediğiniz Elemanı Çift Tıklayın :)";
+            this.label5.Text = "Silmek İstediğiniz Elemanı Çift Tıklayın :) Aşağıdan Tarih Seçip Kayıtları Filter" +
+    "eleyebilirsiniz.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnFiltrele
+            // 
+            this.btnFiltrele.BackColor = System.Drawing.Color.Turquoise;
+            this.btnFiltrele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrele.Location = new System.Drawing.Point(730, 232);
+            this.btnFiltrele.Name = "btnFiltrele";
+            this.btnFiltrele.Size = new System.Drawing.Size(63, 40);
+            this.btnFiltrele.TabIndex = 14;
+            this.btnFiltrele.Text = "Filtrele";
+            this.btnFiltrele.UseVisualStyleBackColor = false;
+            // 
+            // dtpFiltre
+            // 
+            this.dtpFiltre.Location = new System.Drawing.Point(543, 347);
+            this.dtpFiltre.Name = "dtpFiltre";
+            this.dtpFiltre.Size = new System.Drawing.Size(182, 25);
+            this.dtpFiltre.TabIndex = 15;
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 381);
+            this.ClientSize = new System.Drawing.Size(906, 381);
+            this.Controls.Add(this.dtpFiltre);
+            this.Controls.Add(this.btnFiltrele);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnYazi);
@@ -198,7 +222,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "GUI";
-            this.Padding = new System.Windows.Forms.Padding(10, 45, 10, 10);
+            this.Padding = new System.Windows.Forms.Padding(10, 45, 10, 40);
             this.Text = ":: Ahmed Şeref GÜNEYSU ::";
             this.Load += new System.EventHandler(this.GUI_Load);
             this.ResumeLayout(false);
@@ -220,6 +244,8 @@
         private System.Windows.Forms.Button btnYazi;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnFiltrele;
+        private System.Windows.Forms.DateTimePicker dtpFiltre;
     }
 }
 

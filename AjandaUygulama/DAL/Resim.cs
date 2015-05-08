@@ -8,7 +8,7 @@ namespace AjandaUygulama.DAL
 {
     public partial class All
     {
-        public IList<Entity.Resim> ListeleResim(DateTime? tarih = null)
+        public List<Entity.Resim> ListeleResim(DateTime? tarih = null)
         {
             var liste = new List<Entity.Resim>();
             if (tarih == null)

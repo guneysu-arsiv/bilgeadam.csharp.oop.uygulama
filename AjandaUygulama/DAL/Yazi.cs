@@ -8,7 +8,7 @@ namespace AjandaUygulama.DAL
 {
     public partial class All
     {
-        public IList<Entity.Yazi> ListeleYazi(DateTime? tarih = null)
+        public List<Entity.Yazi> ListeleYazi(DateTime? tarih = null)
         {
             var liste = new List<Entity.Yazi>();
 

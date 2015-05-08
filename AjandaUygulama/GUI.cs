@@ -12,6 +12,11 @@ namespace AjandaUygulama
 {
     public partial class GUI : Form
     {
+        public List<Entity.Kayit> kayitlarFiltre = new List<Entity.Kayit>();
+        public List<Entity.Durum> durumlarFiltre = new List<Entity.Durum>();
+        public List<Entity.Resim> resimlerFiltre = new List<Entity.Resim>();
+        public List<Entity.Yazi> yazilarFiltre = new List<Entity.Yazi>();
+
         public DAL.All dal = new DAL.All();
 
         public GUI()
@@ -62,6 +67,7 @@ namespace AjandaUygulama
             lstDurum.DataSource = DB.Ortak.durumlar;
             lstResim.DataSource = DB.Ortak.resimler;
             lstYazi.DataSource = DB.Ortak.yazilar;
+
         }
         ~GUI()
         {
@@ -161,6 +167,27 @@ namespace AjandaUygulama
                 {
                     //...
                 }
+            };
+
+            btnFiltrele.Click += (o, e) =>
+            {
+                lstAll.DataSource = null;
+                lstDurum.DataSource = null;
+                lstResim.DataSource = null;
+                lstYazi.DataSource = null;
+
+
+                durumlarFiltre = dal.ListeleDurum(dtpFiltre.Value);
+                resimlerFiltre = dal.ListeleResim(dtpFiltre.Value);
+                yazilarFiltre = dal.ListeleYazi(dtpFiltre.Value);
+
+
+                lstAll.DataSource = kayitlarFiltre;
+                lstDurum.DataSource = durumlarFiltre;
+                lstResim.DataSource = resimlerFiltre;
+                lstYazi.DataSource = yazilarFiltre;
+
+                
             };
 
 

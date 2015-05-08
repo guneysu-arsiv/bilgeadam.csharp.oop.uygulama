@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace AjandaUygulama.Entity
 {
-    public abstract class Kayit
+    public interface IKayit<T>
     {
-        public int id { get; set; }
-        public string title { get; set; }
-        public DateTime date { get; set; }
+        // TODO. 
     }
 }

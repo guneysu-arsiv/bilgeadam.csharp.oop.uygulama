@@ -44,7 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\All.cs" />
+    <Compile Include="DAL\Durum.cs" />
+    <Compile Include="DAL\Resim.cs" />
+    <Compile Include="DAL\Yazi.cs" />
+    <Compile Include="DB\Ortak.cs" />
     <Compile Include="Entity\Durum.cs" />
+    <Compile Include="Entity\IKayit.cs" />
     <Compile Include="Entity\Resim.cs" />
     <Compile Include="Entity\Yazi.cs" />
     <Compile Include="Enum\Durum.cs" />
@@ -81,6 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Serialize\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

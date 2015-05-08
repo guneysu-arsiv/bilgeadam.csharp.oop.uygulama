@@ -20,35 +20,46 @@ namespace AjandaUygulama.UI
 
         private void Durum_Load(object sender, EventArgs e)
         {
-            cmbDurum.DataSource = Enum.GetValues(typeof(Enums.Durum));
-            txtID.Text = DB.Ortak.durumlar.Count().ToString();
+            uiInit();
+            uiInitEvents();
+        }
+
+        private void uiInitEvents()
+        {
             cmbDurum.SelectedIndexChanged += (o, i) =>
             {
                 MessageBox.Show(cmbDurum.SelectedValue.ToString());
             };
+
+            btnKaydet.Click += (o, e) =>
+            {
+                try
+                {
+                    dal.KaydetDurum(
+                        new Entity.Durum
+                        {
+                            title = txtTitle.Text,
+                            id = Convert.ToInt32(txtID.Text),
+                            durum = (Enums.Durum)cmbDurum.SelectedItem,
+                            date = dtpDate.Value
+                        });
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    return;
+                }
+
+                this.Close();
+
+            };
         }
 
-        private void btnKaydet_Click(object sender, EventArgs e)
+        private void uiInit()
         {
-
-            try
-            {
-                dal.KaydetDurum(
-                    new Entity.Durum
-                    {
-                        title = txtTitle.Text,
-                        id = Convert.ToInt32(txtID.Text),
-                        durum = (Enums.Durum)cmbDurum.SelectedItem,
-                        date = dtpDate.Value
-                 });
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(exception.Message);
-                return;
-            }
-
-            this.Close();
+            cmbDurum.DataSource = Enum.GetValues(typeof(Enums.Durum));
+            txtID.Text = DB.Ortak.durumlar.Count().ToString();
         }
+
     }
 }

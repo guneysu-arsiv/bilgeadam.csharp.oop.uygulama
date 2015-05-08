@@ -36,8 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnYeni = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDurum = new System.Windows.Forms.Button();
+            this.btnResim = new System.Windows.Forms.Button();
+            this.btnYazi = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstAll
@@ -120,33 +123,70 @@
             this.label4.Text = "Yazı";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnYeni
+            // btnDurum
             // 
-            this.btnYeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYeni.Location = new System.Drawing.Point(731, 45);
-            this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(51, 68);
-            this.btnYeni.TabIndex = 8;
-            this.btnYeni.Text = "Yeni";
-            this.btnYeni.UseVisualStyleBackColor = true;
+            this.btnDurum.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDurum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDurum.Location = new System.Drawing.Point(731, 94);
+            this.btnDurum.Name = "btnDurum";
+            this.btnDurum.Size = new System.Drawing.Size(63, 40);
+            this.btnDurum.TabIndex = 9;
+            this.btnDurum.Text = "Durum";
+            this.btnDurum.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnResim
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(731, 119);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 68);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Yeni";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnResim.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnResim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResim.Location = new System.Drawing.Point(731, 140);
+            this.btnResim.Name = "btnResim";
+            this.btnResim.Size = new System.Drawing.Size(63, 40);
+            this.btnResim.TabIndex = 10;
+            this.btnResim.Text = "Resim";
+            this.btnResim.UseVisualStyleBackColor = false;
+            // 
+            // btnYazi
+            // 
+            this.btnYazi.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnYazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYazi.Location = new System.Drawing.Point(731, 186);
+            this.btnYazi.Name = "btnYazi";
+            this.btnYazi.Size = new System.Drawing.Size(63, 40);
+            this.btnYazi.TabIndex = 11;
+            this.btnYazi.Text = "Yazı";
+            this.btnYazi.UseVisualStyleBackColor = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Location = new System.Drawing.Point(731, 48);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(63, 40);
+            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.Text = "Yenile";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(732, 275);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 95);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Silmek İstediğiniz Elemanı Çift Tıklayın :)";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 381);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnYeni);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnYazi);
+            this.Controls.Add(this.btnResim);
+            this.Controls.Add(this.btnDurum);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -175,8 +215,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnYeni;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDurum;
+        private System.Windows.Forms.Button btnResim;
+        private System.Windows.Forms.Button btnYazi;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label label5;
     }
 }
 

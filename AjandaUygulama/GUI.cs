@@ -50,18 +50,122 @@ namespace AjandaUygulama
                 }
                 );
 
+
+            uiInit();
+            uiInitEvents();
+
+        }
+
+        private void uiInit()
+        {
             lstAll.DataSource = dal.Listele();
             lstDurum.DataSource = DB.Ortak.durumlar;
             lstResim.DataSource = DB.Ortak.resimler;
             lstYazi.DataSource = DB.Ortak.yazilar;
-
-            new UI.uiDurum().ShowDialog();
-
         }
         ~GUI()
         {
             // TODO: Save to file
             // Or to FORM_CLOSING Event
         }
+
+        private void uiRefresh()
+        {
+            lstAll.DataSource = dal.Listele();
+            lstAll.DataSource = dal.Listele();
+
+            lstDurum.DataSource = null;
+            lstDurum.DataSource = DB.Ortak.durumlar;
+
+            lstResim.DataSource = null;
+            lstResim.DataSource = DB.Ortak.resimler;
+
+            lstYazi.DataSource = null;
+            lstYazi.DataSource = DB.Ortak.yazilar;
+        }
+
+        public void uiInitEvents()
+        {
+            btnRefresh.Click += (o, e) =>
+            {
+                uiRefresh();
+            };
+
+            btnDurum.Click += (o, e) =>
+            {
+                new UI.uiDurum().ShowDialog();
+                uiRefresh();
+            };
+
+            btnResim.Click += (o, e) =>
+            {
+                new UI.uiResim().ShowDialog();
+                uiRefresh();
+            };
+
+            btnYazi.Click += (o, e) =>
+            {
+                new UI.uiYazi().ShowDialog();
+                uiRefresh();
+            };
+
+            lstDurum.DoubleClick += (o, e) =>
+            {
+                DialogResult result = MessageBox.Show("Silmek İstediğinize Emin Misiniz?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                if (result == DialogResult.Yes)
+                {
+                    DB.Ortak.durumlar.RemoveAt(lstDurum.SelectedIndex);
+                    uiRefresh();
+                }
+                else if (result == DialogResult.No)
+                {
+                    //...
+                }
+                else
+                {
+                    //...
+                }
+            };
+
+            lstResim.DoubleClick += (o, e) =>
+            {
+                DialogResult result = MessageBox.Show("Silmek İstediğinize Emin Misiniz?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                if (result == DialogResult.Yes)
+                {
+                    DB.Ortak.resimler.RemoveAt(lstResim.SelectedIndex);
+                    uiRefresh();
+                }
+                else if (result == DialogResult.No)
+                {
+                    //...
+                }
+                else
+                {
+                    //...
+                }
+            };
+
+            lstYazi.DoubleClick += (o, e) =>
+            {
+                DialogResult result = MessageBox.Show("Silmek İstediğinize Emin Misiniz?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                if (result == DialogResult.Yes)
+                {
+                    DB.Ortak.yazilar.RemoveAt(lstYazi.SelectedIndex);
+                    uiRefresh();
+                }
+                else if (result == DialogResult.No)
+                {
+                    //...
+                }
+                else
+                {
+                    //...
+                }
+            };
+
+
+
+        }
+
     }
 }

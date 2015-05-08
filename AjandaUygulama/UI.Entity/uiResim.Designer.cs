@@ -37,6 +37,10 @@
             this.btnKaydet = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lstPaths = new System.Windows.Forms.ListBox();
+            this.btnResimEkle = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPath = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,21 +49,21 @@
             this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(84, 14);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(200, 25);
+            this.txtID.Size = new System.Drawing.Size(240, 25);
             this.txtID.TabIndex = 13;
             // 
             // dtpDate
             // 
             this.dtpDate.Location = new System.Drawing.Point(84, 75);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 25);
+            this.dtpDate.Size = new System.Drawing.Size(240, 25);
             this.dtpDate.TabIndex = 11;
             // 
             // txtTitle
             // 
             this.txtTitle.Location = new System.Drawing.Point(84, 43);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(200, 25);
+            this.txtTitle.Size = new System.Drawing.Size(240, 25);
             this.txtTitle.TabIndex = 9;
             // 
             // label1
@@ -127,11 +131,51 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Tarih";
             // 
+            // lstPaths
+            // 
+            this.lstPaths.FormattingEnabled = true;
+            this.lstPaths.ItemHeight = 17;
+            this.lstPaths.Location = new System.Drawing.Point(86, 140);
+            this.lstPaths.Name = "lstPaths";
+            this.lstPaths.Size = new System.Drawing.Size(238, 123);
+            this.lstPaths.TabIndex = 14;
+            // 
+            // btnResimEkle
+            // 
+            this.btnResimEkle.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnResimEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResimEkle.Location = new System.Drawing.Point(249, 107);
+            this.btnResimEkle.Name = "btnResimEkle";
+            this.btnResimEkle.Size = new System.Drawing.Size(75, 27);
+            this.btnResimEkle.TabIndex = 16;
+            this.btnResimEkle.Text = "Ekle";
+            this.btnResimEkle.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 113);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 17);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Resim";
+            // 
+            // txtPath
+            // 
+            this.txtPath.Location = new System.Drawing.Point(84, 109);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(159, 25);
+            this.txtPath.TabIndex = 18;
+            // 
             // uiResim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 315);
+            this.Controls.Add(this.txtPath);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnResimEkle);
+            this.Controls.Add(this.lstPaths);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.txtTitle);
@@ -159,5 +203,9 @@
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox lstPaths;
+        private System.Windows.Forms.Button btnResimEkle;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtPath;
     }
 }

@@ -19,7 +19,38 @@ namespace AjandaUygulama.UI
 
         private void uiResim_Load(object sender, EventArgs e)
         {
+            txtID.Text = DB.Ortak.resimler.Count().ToString();
 
+            uiInitEvents();
+        }
+        public void uiInitEvents()
+        {
+            btnResimEkle.Click += (o, e) =>
+            {
+                lstPaths.Items.Add(txtPath.Text);
+                txtPath.Clear();
+            };
+
+            btnKaydet.Click += (o, e) =>
+            {
+                try
+                {
+                    dal.KaydetResim(
+                        new Entity.Resim(
+                            pictures: lstPaths.Items.Cast<String>().ToList())
+                        {
+                            id = Convert.ToInt32(txtID.Text),
+                            title = txtTitle.Text,
+                            date = dtpDate.Value
+                        });
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    return;
+                }
+                this.Close();
+            };
         }
     }
 }

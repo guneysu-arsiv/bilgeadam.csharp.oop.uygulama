@@ -64,9 +64,31 @@ namespace AjandaUygulama
 
         public void uiInitEvents()
         {
+            this.Load += (o, e) => {
+                try
+                {
+                    new Serialize.SerilestiremediklerimizdenMisiniz().cek();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            };
+
+            this.FormClosing += (o, e) => {
+                new Serialize.SerilestiremediklerimizdenMisiniz().bas();
+            };
             btnSerialize.Click += (o, e) =>
             {
-                new Serialize.SerilestiremediklerimizdenMisiniz().bas();
+                try
+                {
+                    new Serialize.SerilestiremediklerimizdenMisiniz().bas();
+
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
             };
 
             btnDeserialize.Click += (o, e) =>

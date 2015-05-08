@@ -71,6 +71,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serialize\Bas.cs" />
     <Compile Include="Serialize\Cek.cs" />
+    <Compile Include="Serialize\SerilestiremediklerimizdenMisiniz.cs" />
     <Compile Include="UI.Entity\uiDurum.cs">
       <SubType>Form</SubType>
     </Compile>

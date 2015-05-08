@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AjandaUygulama.Entity
 {
+    [Serializable]
     public class Resim:Kayit
     {
         public List<string> picturePaths = new List<string>();

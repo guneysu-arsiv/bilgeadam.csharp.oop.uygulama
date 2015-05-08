@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AjandaUygulama.Entity
 {
+    [Serializable]
     public class Yazi:Kayit
     {
         public string body { get; set; }

@@ -12,5 +12,9 @@ namespace AjandaUygulama.Serialize
 {
     public class Bas
     {
+        public Bas()
+        {
+            
+        }
     }
 }

@@ -26,11 +26,6 @@ namespace AjandaUygulama.UI
 
         private void uiInitEvents()
         {
-            cmbDurum.SelectedIndexChanged += (o, i) =>
-            {
-                MessageBox.Show(cmbDurum.SelectedValue.ToString());
-            };
-
             btnKaydet.Click += (o, e) =>
             {
                 try

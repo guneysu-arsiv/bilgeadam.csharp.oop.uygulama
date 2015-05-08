@@ -28,34 +28,6 @@ namespace AjandaUygulama
         {
             dal.ListeleDurum();
             dal.ListeleDurum(new DateTime());
-
-            dal.KaydetDurum(
-                new Entity.Durum
-                {
-                    date = DateTime.Now,
-                    durum = Enums.Durum.Musait,
-                    title = "Kırmızı Başlık"
-                }
-                );
-
-            dal.KaydetResim(
-                new Entity.Resim(pictures: new string[] { "C:/foo.png"} )
-                {
-                    date = DateTime.Now,
-                    title = "Resim",
-                }
-                );
-
-            dal.KaydetYazi(
-                new Entity.Yazi
-                {
-                    date = DateTime.Now,
-                    title = "Yazı",
-                    body = "Açıklama"
-                }
-                );
-
-
             uiInit();
             uiInitEvents();
 
@@ -92,6 +64,17 @@ namespace AjandaUygulama
 
         public void uiInitEvents()
         {
+            btnSerialize.Click += (o, e) =>
+            {
+                new Serialize.SerilestiremediklerimizdenMisiniz().bas();
+            };
+
+            btnDeserialize.Click += (o, e) =>
+            {
+                new Serialize.SerilestiremediklerimizdenMisiniz().cek();
+                uiRefresh();
+            };
+
             btnRefresh.Click += (o, e) =>
             {
                 uiRefresh();
@@ -176,18 +159,14 @@ namespace AjandaUygulama
                 lstResim.DataSource = null;
                 lstYazi.DataSource = null;
 
-
                 durumlarFiltre = dal.ListeleDurum(dtpFiltre.Value);
                 resimlerFiltre = dal.ListeleResim(dtpFiltre.Value);
                 yazilarFiltre = dal.ListeleYazi(dtpFiltre.Value);
 
-
                 lstAll.DataSource = kayitlarFiltre;
                 lstDurum.DataSource = durumlarFiltre;
                 lstResim.DataSource = resimlerFiltre;
-                lstYazi.DataSource = yazilarFiltre;
-
-                
+                lstYazi.DataSource = yazilarFiltre;                
             };
 
 

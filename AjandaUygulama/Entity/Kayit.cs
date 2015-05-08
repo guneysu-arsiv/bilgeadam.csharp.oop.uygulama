@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AjandaUygulama.Entity
 {
+    [Serializable]
     public abstract class Kayit
     {
         public int id { get; set; }

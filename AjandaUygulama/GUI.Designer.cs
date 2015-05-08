@@ -43,6 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnFiltrele = new System.Windows.Forms.Button();
             this.dtpFiltre = new System.Windows.Forms.DateTimePicker();
+            this.btnSerialize = new System.Windows.Forms.Button();
+            this.btnDeserialize = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstAll
@@ -199,11 +201,35 @@
             this.dtpFiltre.Size = new System.Drawing.Size(182, 25);
             this.dtpFiltre.TabIndex = 15;
             // 
+            // btnSerialize
+            // 
+            this.btnSerialize.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSerialize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSerialize.Location = new System.Drawing.Point(799, 48);
+            this.btnSerialize.Name = "btnSerialize";
+            this.btnSerialize.Size = new System.Drawing.Size(94, 40);
+            this.btnSerialize.TabIndex = 16;
+            this.btnSerialize.Text = "Dosyaya";
+            this.btnSerialize.UseVisualStyleBackColor = false;
+            // 
+            // btnDeserialize
+            // 
+            this.btnDeserialize.BackColor = System.Drawing.Color.Turquoise;
+            this.btnDeserialize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeserialize.Location = new System.Drawing.Point(799, 94);
+            this.btnDeserialize.Name = "btnDeserialize";
+            this.btnDeserialize.Size = new System.Drawing.Size(94, 40);
+            this.btnDeserialize.TabIndex = 17;
+            this.btnDeserialize.Text = "Dosyadan";
+            this.btnDeserialize.UseVisualStyleBackColor = false;
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 381);
+            this.Controls.Add(this.btnDeserialize);
+            this.Controls.Add(this.btnSerialize);
             this.Controls.Add(this.dtpFiltre);
             this.Controls.Add(this.btnFiltrele);
             this.Controls.Add(this.label5);
@@ -246,6 +272,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnFiltrele;
         private System.Windows.Forms.DateTimePicker dtpFiltre;
+        private System.Windows.Forms.Button btnSerialize;
+        private System.Windows.Forms.Button btnDeserialize;
     }
 }
 

@@ -8,9 +8,16 @@ namespace AjandaUygulama.DAL
 {
     public partial class All
     {
-        public IList<Entity.Durum> ListeleDurum()
+        public IList<Entity.Durum> ListeleDurum(DateTime? tarih = null)
         {
-            return DB.Ortak.durumlar;
+            if (tarih == null)
+            {
+                return DB.Ortak.durumlar;
+            }
+            else
+            {
+                return new List<Entity.Durum>();
+            }
         }
 
         public void KaydetDurum(Entity.Durum e){

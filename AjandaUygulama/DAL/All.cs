@@ -8,7 +8,7 @@ namespace AjandaUygulama.DAL
 {
     public partial class All
     {
-        public IList<Entity.Kayit> Listele()
+        public IList<Entity.Kayit> Listele(DateTime? tarih = null)
         {
             List<Entity.Kayit> kayitlar = new List<Entity.Kayit>();
             foreach (var durum in DB.Ortak.durumlar)

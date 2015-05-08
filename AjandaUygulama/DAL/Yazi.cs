@@ -8,9 +8,16 @@ namespace AjandaUygulama.DAL
 {
     public partial class All
     {
-        public IList<Entity.Yazi> ListeleYazi()
+        public IList<Entity.Yazi> ListeleYazi(DateTime? tarih = null)
         {
-            return DB.Ortak.yazilar;
+            if (tarih == null)
+            {
+                return DB.Ortak.yazilar;
+            }
+            else
+            {
+                return new List<Entity.Yazi>();
+            }
         }
 
         public void KaydetYazi(Entity.Yazi e)

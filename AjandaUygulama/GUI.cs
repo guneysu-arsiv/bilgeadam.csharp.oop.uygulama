@@ -19,7 +19,8 @@ namespace AjandaUygulama
 
         private void GUI_Load(object sender, EventArgs e)
         {
-            
+            new DAL.All().ListeleDurum();
+            new DAL.All().ListeleDurum(new DateTime() );
         }
         ~GUI()
         {

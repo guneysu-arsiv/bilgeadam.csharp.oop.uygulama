@@ -8,9 +8,16 @@ namespace AjandaUygulama.DAL
 {
     public partial class All
     {
-        public IList<Entity.Resim> ListeleResim()
+        public IList<Entity.Resim> ListeleResim(DateTime? tarih = null)
         {
-            return DB.Ortak.resimler;
+            if (tarih == null)
+            {
+                return DB.Ortak.resimler;
+            }
+            else
+            {
+                return new List<Entity.Resim>();
+            }
         }
 
         public void KaydetResim(Entity.Resim e)

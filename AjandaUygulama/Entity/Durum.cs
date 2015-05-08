@@ -8,6 +8,6 @@ namespace AjandaUygulama.Entity
 {
     public class Durum:Kayit
     {
-        public Enum.Durum durum { get; set; }
+        public Enums.Durum durum { get; set; }
     }
 }

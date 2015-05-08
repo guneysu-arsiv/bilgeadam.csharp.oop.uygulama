@@ -33,6 +33,13 @@ namespace AjandaUygulama.DAL
         }
 
         public void KaydetDurum(Entity.Durum e){
+
+            // BLL
+            if (String.IsNullOrEmpty(e.title))
+            {
+                throw new Exception("Başlık Boş Bırakılamaz");
+            }
+
             e.id = DB.Ortak.durumlar.Count();
             DB.Ortak.durumlar.Add(e);
         }

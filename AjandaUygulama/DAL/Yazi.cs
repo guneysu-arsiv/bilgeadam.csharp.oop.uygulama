@@ -33,6 +33,11 @@ namespace AjandaUygulama.DAL
 
         public void KaydetYazi(Entity.Yazi e)
         {
+            // BLL
+            if (String.IsNullOrEmpty(e.title))
+            {
+                throw new Exception("Başlık Boş Bırakılamaz");
+            }
             e.id = DB.Ortak.yazilar.Count();
             DB.Ortak.yazilar.Add(e);
         }

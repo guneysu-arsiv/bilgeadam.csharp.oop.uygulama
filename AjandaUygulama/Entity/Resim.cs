@@ -8,6 +8,18 @@ namespace AjandaUygulama.Entity
 {
     public class Resim:Kayit
     {
-        public string picturePath { get; set; }
+        public List<string> picturePaths = new List<string>();
+
+        public Resim()
+        {
+
+        }
+        public Resim(string[] pictures)
+        {
+            foreach (var picture in pictures)
+            {
+                picturePaths.Add(picture);
+            }
+        }
     }
 }

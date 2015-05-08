@@ -28,25 +28,34 @@ namespace AjandaUygulama
                 new Entity.Durum
                 {
                     date = DateTime.Now,
-                    durum = Enum.Durum.Musait,
+                    durum = Enums.Durum.Musait,
                     title = "Kırmızı Başlık"
                 }
                 );
 
             dal.KaydetResim(
-                new Entity.Resim
+                new Entity.Resim(pictures: new string[] { "C:/foo.png"} )
                 {
                     date = DateTime.Now,
                     title = "Resim",
-                    picturePath = "C:/foo.png"
+                }
+                );
+
+            dal.KaydetYazi(
+                new Entity.Yazi
+                {
+                    date = DateTime.Now,
+                    title = "Yazı",
+                    body = "Açıklama"
                 }
                 );
 
             lstAll.DataSource = dal.Listele();
-
+            lstDurum.DataSource = DB.Ortak.durumlar;
             lstResim.DataSource = DB.Ortak.resimler;
             lstYazi.DataSource = DB.Ortak.yazilar;
-            lstDurum.DataSource = DB.Ortak.durumlar;
+
+            new UI.uiDurum().ShowDialog();
 
         }
         ~GUI()

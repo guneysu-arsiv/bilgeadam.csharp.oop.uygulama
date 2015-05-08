@@ -32,6 +32,11 @@ namespace AjandaUygulama.DAL
 
         public void KaydetResim(Entity.Resim e)
         {
+            // BLL
+            if (String.IsNullOrEmpty(e.title))
+            {
+                throw new Exception("Başlık Boş Bırakılamaz");
+            }
             e.id = DB.Ortak.resimler.Count();
             DB.Ortak.resimler.Add(e);
         }

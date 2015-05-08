@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AjandaUygulama.Entity
 {
-    public class Durum
+    public class Durum:Kayit
     {
         public Durum durum { get; set; }
     }

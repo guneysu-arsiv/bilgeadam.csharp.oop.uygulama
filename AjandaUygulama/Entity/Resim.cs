@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AjandaUygulama.Enum
+namespace AjandaUygulama.Entity
 {
-    class Resim
+    public class Resim:Kayit
     {
         public string picturePath { get; set; }
     }

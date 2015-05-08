@@ -10,14 +10,26 @@ namespace AjandaUygulama.DAL
     {
         public IList<Entity.Durum> ListeleDurum(DateTime? tarih = null)
         {
+            var liste = new List<Entity.Durum>();
+
             if (tarih == null)
             {
-                return DB.Ortak.durumlar;
+                liste = DB.Ortak.durumlar;
             }
             else
             {
-                return new List<Entity.Durum>();
+                foreach (var item in DB.Ortak.durumlar)
+                {
+                    TimeSpan ts = (TimeSpan)(tarih - item.date);
+                    int fark = (int)ts.TotalDays;
+                    if (fark == 0)
+                    {
+                        liste.Add(item);
+                    }
+                }
+   
             }
+            return liste;
         }
 
         public void KaydetDurum(Entity.Durum e){

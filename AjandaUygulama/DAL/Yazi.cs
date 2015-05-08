@@ -10,14 +10,25 @@ namespace AjandaUygulama.DAL
     {
         public IList<Entity.Yazi> ListeleYazi(DateTime? tarih = null)
         {
+            var liste = new List<Entity.Yazi>();
+
             if (tarih == null)
             {
-                return DB.Ortak.yazilar;
+                liste = DB.Ortak.yazilar;
             }
             else
             {
-                return new List<Entity.Yazi>();
+                foreach (var item in DB.Ortak.yazilar)
+                {
+                    TimeSpan ts = (TimeSpan)(tarih - item.date);
+                    int fark = (int)ts.TotalDays;
+                    if (fark == 0)
+                    {
+                        liste.Add(item);
+                    }
+                }
             }
+            return liste;
         }
 
         public void KaydetYazi(Entity.Yazi e)

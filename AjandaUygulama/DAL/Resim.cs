@@ -10,14 +10,24 @@ namespace AjandaUygulama.DAL
     {
         public IList<Entity.Resim> ListeleResim(DateTime? tarih = null)
         {
+            var liste = new List<Entity.Resim>();
             if (tarih == null)
             {
-                return DB.Ortak.resimler;
+                liste =  DB.Ortak.resimler;
             }
             else
             {
-                return new List<Entity.Resim>();
+                foreach (var item in DB.Ortak.resimler)
+                {
+                    TimeSpan ts = (TimeSpan) (tarih - item.date);
+                    int fark = (int)ts.TotalDays;
+                    if ( fark == 0  )
+                    {
+                        liste.Add(item);
+                    }
+                }
             }
+            return liste;
         }
 
         public void KaydetResim(Entity.Resim e)

@@ -16,5 +16,15 @@ namespace AjandaUygulama
         {
             InitializeComponent();
         }
+
+        private void GUI_Load(object sender, EventArgs e)
+        {
+
+        }
+        ~GUI()
+        {
+            // TODO: Save to file
+            // Or to FORM_CLOSING Event
+        }
     }
 }

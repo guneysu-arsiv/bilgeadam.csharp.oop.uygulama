@@ -40,6 +40,7 @@
             this.Name = "GUI";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = ":: Ahmed Şeref GÜNEYSU ::";
+            this.Load += new System.EventHandler(this.GUI_Load);
             this.ResumeLayout(false);
 
         }

@@ -46,9 +46,14 @@ namespace AjandaUygulama.Serialize
                 SerilestiremediklerimizdenMisiniz obj = (SerilestiremediklerimizdenMisiniz)formatter.Deserialize(stream);
                 stream.Close();
 
-            DB.Ortak.durumlar = obj.d;
-            DB.Ortak.resimler = obj.r;
-            DB.Ortak.yazilar = obj.y;
+                DB.Ortak.durumlar = obj.d;
+                DB.Ortak.resimler = obj.r;
+                DB.Ortak.yazilar = obj.y;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
     }
 }

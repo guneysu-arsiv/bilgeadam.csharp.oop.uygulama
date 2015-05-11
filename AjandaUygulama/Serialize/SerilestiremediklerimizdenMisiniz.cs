@@ -39,14 +39,21 @@ namespace AjandaUygulama.Serialize
         public void cek()
         {
             IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream("db.bin",
-                     FileMode.Open, FileAccess.Read, FileShare.Read);
-            SerilestiremediklerimizdenMisiniz obj = (SerilestiremediklerimizdenMisiniz)formatter.Deserialize(stream);
-            stream.Close();
+            try
+            {
+                Stream stream = new FileStream("db.bin",
+                 FileMode.Open, FileAccess.Read, FileShare.Read);
+                SerilestiremediklerimizdenMisiniz obj = (SerilestiremediklerimizdenMisiniz)formatter.Deserialize(stream);
+                stream.Close();
 
-            DB.Ortak.durumlar = obj.d;
-            DB.Ortak.resimler = obj.r;
-            DB.Ortak.yazilar = obj.y;
+                DB.Ortak.durumlar = obj.d;
+                DB.Ortak.resimler = obj.r;
+                DB.Ortak.yazilar = obj.y;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
     }
 }
